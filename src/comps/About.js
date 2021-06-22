@@ -22,7 +22,7 @@ const About = ({ dispatch, isOpen }) => {
     <Portal>
       <Dialog open={isOpen} fullWidth onClose={handleClose}>
         <DialogTitle style={{ textAlign: "center" }}>
-          Material-UI Palette Generator
+          Material-UI Palette Picker
         </DialogTitle>
         <DialogContent style={{ textAlign: "center" }}>
           <ProgressiveImage

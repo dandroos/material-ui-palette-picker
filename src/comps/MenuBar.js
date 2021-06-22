@@ -125,8 +125,13 @@ const MenuBar = ({
         }}
       >
         <Toolbar variant="dense">
+          <img
+            src="logo.png"
+            width="50"
+            style={{ marginRight: 20 }}
+          />
           <Typography variant="h5">
-            Material-UI Palette Selector
+            Material-UI Palette Picker
           </Typography>
           <Box flexGrow={1} />
           <IconButton
