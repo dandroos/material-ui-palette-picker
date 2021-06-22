@@ -1,25 +1,64 @@
-import logo from './logo.svg';
-import './App.css';
+import { useEffect } from "react"
+import { connect } from "react-redux"
+import { Box } from "@material-ui/core"
+import About from "./comps/About"
+import Menu from "./comps/MenuBar"
+import Theme from "./Theme"
+import Toast from "./comps/Toast"
+import Colors from "./comps/Colors"
+import ColorPicker from "./comps/ColorPicker"
+import Update from "./objs/Update"
+import { setMenu } from "./state/actions"
 
-function App() {
+function App({ dispatch, timerId }) {
+  const refresh = () => {
+    const update = new Update()
+    update.commit()
+  }
+
+  useEffect(() => {
+    document.addEventListener("keypress", (e) => {
+      if (e.charCode === 32) {
+        refresh()
+      }
+    })
+    refresh()
+  }, [])
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <Theme>
+      <ColorPicker />
+      <About />
+      <Menu />
+      <Box
+        onMouseMove={() => {
+          if (timerId) {
+            clearTimeout(timerId)
+          }
+          dispatch(
+            setMenu({
+              visible: true,
+              timerId: setTimeout(() => {
+                dispatch(
+                  setMenu({
+                    visible: false,
+                    timerId: null,
+                  })
+                )
+              }, 1000),
+            })
+          )
+        }}
+      >
+        <Colors />
+      </Box>
+      <Toast />
+    </Theme>
+  )
 }
 
-export default App;
+const mapStateToProps = (state) => ({
+  timerId: state.menu.timerId,
+})
+
+export default connect(mapStateToProps)(App)
