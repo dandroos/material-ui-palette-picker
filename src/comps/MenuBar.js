@@ -32,6 +32,7 @@ const MenuBar = ({
   history,
   undoSteps,
   hexValues,
+  locks,
 }) => {
   const handleClick = (e) => {
     document.activeElement.blur()
@@ -83,10 +84,12 @@ const MenuBar = ({
             {
               variant: "primary",
               hex: hexValues.secondary,
+              lock: locks.secondary,
             },
             {
               variant: "secondary",
               hex: hexValues.primary,
+              lock: locks.primary,
             },
           ],
           disableUndo: true,
@@ -95,6 +98,7 @@ const MenuBar = ({
         break
       case "about":
         dispatch(setAbout(true))
+        break
       default:
         break
     }
@@ -171,6 +175,7 @@ const mapStateToProps = (state) => ({
   history: state.history,
   undoSteps: state.undoSteps,
   hexValues: state.hexValues,
+  locks: state.locks,
 })
 
 export default connect(mapStateToProps)(MenuBar)

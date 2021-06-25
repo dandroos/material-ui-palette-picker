@@ -27,6 +27,7 @@ const About = ({ dispatch, isOpen }) => {
         >
           <img
             src="./logo.png"
+            alt="Material-UI logo"
             style={{ width: 50, marginRight: 15 }}
           />
           <Typography variant="h4">

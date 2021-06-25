@@ -6,7 +6,7 @@ import store from "./state/store"
 import App from "./App"
 
 ReactDOM.render(
-  <React.StrictMode>
+  <>
     <Helmet>
       <link
         rel="preconnect"
@@ -25,6 +25,6 @@ ReactDOM.render(
     <Provider store={store}>
       <App />
     </Provider>
-  </React.StrictMode>,
+  </>,
   document.getElementById("root")
 )

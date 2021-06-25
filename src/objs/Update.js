@@ -3,7 +3,7 @@ import {
   setHexValue,
   setLoading,
   setUndoEnabled,
-  setUndoSteps,
+  setLock,
 } from "../state/actions"
 import rgbHex from "rgb-hex"
 
@@ -37,6 +37,14 @@ export default class Update {
       for (let update of this.update) {
         this.variants.push(update.variant)
         this.hexValues[update.variant] = update.hex
+        if (update.hasOwnProperty("lock")) {
+          store.dispatch(
+            setLock({
+              variant: update.variant,
+              locked: update.lock,
+            })
+          )
+        }
       }
     }
   }
