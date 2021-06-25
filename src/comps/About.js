@@ -21,8 +21,17 @@ const About = ({ dispatch, isOpen }) => {
   return (
     <Portal>
       <Dialog open={isOpen} fullWidth onClose={handleClose}>
-        <DialogTitle style={{ textAlign: "center" }}>
-          Material-UI Palette Picker
+        <DialogTitle
+          disableTypography
+          style={{ textAlign: "center" }}
+        >
+          <img
+            src="./logo.png"
+            style={{ width: 50, marginRight: 15 }}
+          />
+          <Typography variant="h4">
+            Material-UI Palette Picker
+          </Typography>
         </DialogTitle>
         <DialogContent style={{ textAlign: "center" }}>
           <ProgressiveImage
@@ -32,15 +41,14 @@ const About = ({ dispatch, isOpen }) => {
             {(src) => (
               <img
                 src={src}
-                alt="Photo of David with a dog"
+                alt="David with a dog"
                 style={{ borderRadius: "50%" }}
               />
             )}
           </ProgressiveImage>
           <Typography paragraph>
-            Thanks for checking out my little app to assist you
-            in choosing the palette for your next Material-UI
-            project. If you enjoy using it, please consider
+            Hi! My name's Dave. Thanks for checking out my
+            little app. If you enjoy using it, please consider
             giving me some love/stars on GitHub.
           </Typography>
           <Typography>

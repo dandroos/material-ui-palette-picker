@@ -127,6 +127,7 @@ const MenuBar = ({
         <Toolbar variant="dense">
           <img
             src="logo.png"
+            alt="material logo"
             width="50"
             style={{ marginRight: 20 }}
           />

@@ -26,6 +26,9 @@ const Theme = ({
         main: secondary,
       },
     },
+    typography: {
+      fontFamily: "Inter",
+    },
   })
 
   useEffect(() => {
