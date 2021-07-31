@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "homepage": "http://dandroos.github.io/material-ui-palette-picker",
+  "homepage": "http://dandroos.github.io/material-ui-palette-picker",
   "dependencies": {
     "@material-ui/core": "^4.11.4",
     "@material-ui/lab": "^4.0.0-alpha.58",
@@ -29,6 +30,9 @@
   "scripts": {
     "start": "react-scripts start",
     "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "deploy": "gh-pages -d build",
     "build": "react-scripts build",
     "test": "react-scripts test",

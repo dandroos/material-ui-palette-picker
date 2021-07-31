@@ -50,7 +50,14 @@ const About = ({ dispatch, isOpen }) => {
           <Typography paragraph>
             Hi! My name's Dave. Thanks for checking out my
             little app. If you enjoy using it, please consider
-            giving me some love/stars on GitHub.
+            giving me some love/stars on{" "}
+            <Link
+              href="https://github.com/dandroos/material-ui-palette-picker"
+              target="_blank"
+            >
+              GitHub
+            </Link>
+            .
           </Typography>
           <Typography>
             If you have any comments or suggestions, please
